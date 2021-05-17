@@ -732,9 +732,10 @@ def gerar_doc(nome):
     # doc.docupload = url
     # doc.title = nome
 
-    f = File(open(os.path.join(settings.MEDIA_ROOT, 'documents/media/Anexos ' + nome + '.docx'), 'rb'))
+    f = File(open(os.path.join('documents/documents/media/Anexos ' + nome + '.docx'), 'rb'))
     doc = DocFiles()
     doc.docupload = f
+    doc.title = nome
 
     doc.save(nome)
 
