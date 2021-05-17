@@ -39,6 +39,8 @@ class Produtos(models.Model):
     tempo_de_sup = models.IntegerField(blank=True, default=0)
     valor_de_terceiros = models.DecimalField(max_digits=8, decimal_places=2, default=0)
     data = models.DateTimeField()
+    data_alteracao = models.DateField(auto_now=True)
+    usuario = models.ForeignKey(User,null=True,blank=True, on_delete=models.CASCADE)
 
     class Meta:
         ordering = ('nome',)
@@ -165,7 +167,7 @@ class ListaMaterial(models.Model):
 
 
 class DocFiles(models.Model):
-    docupload = models.CharField(max_length=500, null=True)
+    docupload = models.FileField(max_length=500)
     title = models.CharField(max_length=50)
     data = models.DateTimeField(auto_now=True)
 
