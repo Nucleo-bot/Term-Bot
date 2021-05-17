@@ -79,7 +79,7 @@ class Projeto(models.Model):
 
 class ListaMaterial(models.Model):
     quantidade = models.IntegerField(null=False, blank=False)
-    produto = models.ForeignKey(Produtos, null=True, blank=True, on_delete=models.PROTECT)
+    produto = models.ForeignKey(Produtos, null=True, blank=True, on_delete=models.CASCADE)
     projeto = models.ForeignKey(Projeto, null=True, on_delete=models.CASCADE)
 
 
