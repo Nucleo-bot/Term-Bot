@@ -740,7 +740,7 @@ def gerar_doc(nome):
 
 
 def gerar_planilha(nome):
-    f = File(open(os.path.join(settings.MEDIA_ROOT, 'documents/media/Planilha ' + nome + '.xlsx'), 'rb'))
+    f = File(open(os.path.join('documents/documents/media/Planilha ' + nome + '.xlsx'), 'rb'))
     doc = DocFiles()
     doc.docupload = f
 
